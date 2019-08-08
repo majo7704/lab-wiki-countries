@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Link } from 'react-router-dom'
+import countries from './countries.json'
+import Home from './components/Home'
+import CountryDetail from './components/CountryDetail.js'
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+
+export default function App() {
+  let countriesList = countries.map((country) => (
+    <li className="countryList"><Link to={`/country/${country.cca3}`}>{country.name.common}{country.flag.normalize()}</Link></li>
+   ) )
+  return (
+    <div id="main-container">
+      <aside>
+      <ul className="countries-container">
+        {countriesList}
+      </ul>
+      </aside>
+      <Route exact path='/' component={Home} />
+      <Route path='/country/:countryId' component={CountryDetail}/>
+    </div>
+  )
 }
 
-export default App;
+
+
