@@ -4,11 +4,11 @@ import { Link } from "react-router-dom"
 import './CountryDetail.css'
 
 export default function Country(props) {
-  let { params } = props.match
-  let { countryId } = params;
-  let foundCountry = countries.find((oneCountry) => (
+  var { params } = props.match
+  var { countryId } = params;
+  const foundCountry = countries.find((oneCountry) => (
     oneCountry.cca3 === countryId
-))
+  ))
   
   return (
     <div className="country-container">
@@ -19,9 +19,12 @@ export default function Country(props) {
         <h3>Borders:</h3>
         <ul>
           {foundCountry.borders.map((countryCode) => {
+            var foundBorder = countries.find((oneBorder) => (
+              oneBorder === countryId
+            ))
             return (
               <li key={countryCode}>
-                <Link to={`/country/${foundCountry.cca3}`}>{countryCode}</Link>
+                <Link to={`/country/${countryCode}`}>{countryCode}</Link>
               </li>
             )
           })}
