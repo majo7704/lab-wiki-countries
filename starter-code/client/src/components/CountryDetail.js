@@ -13,13 +13,13 @@ export default function Country(props) {
   return (
     <div className="country-container">
       <div className="country">
-        <h2>{foundCountry.name.common}</h2>
+        <h1>{foundCountry.name.common}</h1>
         <h3>Capital: {foundCountry.capital[0]}</h3>
         <h3>Area: {foundCountry.area}</h3>
         <h3>Borders:</h3>
         <ul>
           {foundCountry.borders.map((countryCode) => {
-            var foundBorder = countries.find((oneBorder) => (
+            countries.find((oneBorder) => (
               oneBorder === countryId
             ))
             return (

@@ -2,6 +2,15 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 10%;
+  padding: 5%;
+  margin: 0 auto;
 }
 
+.country {
+  padding: 10%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+  border-radius: 3px;
+  height: 100%;
+  width: 80%;
+  flex-wrap: wrap;
+}

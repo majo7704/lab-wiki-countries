@@ -13,3 +13,11 @@ aside {
 #main-container {
   display: flex;
 }
+li {
+  list-style: none;
+ 
+}
+a {
+  text-decoration: none;
+  color:lightslategray
+}
